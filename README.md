@@ -28,6 +28,15 @@ cd windows
 .\uninstall.ps1       # remove the autostart entry
 ```
 
+If Claude was installed from the **Microsoft Store** (it lives under
+`%LOCALAPPDATA%\Packages\Claude_...`), use the Store variant instead, which
+creates a Startup-folder shortcut to the app's application ID:
+
+```powershell
+.\install-store.ps1   # autostart the Store version of Claude at login
+.\uninstall-store.ps1 # remove it
+```
+
 ## Linux
 
 Uses an XDG autostart entry (`~/.config/autostart`), which works on GNOME,
