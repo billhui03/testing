@@ -361,7 +361,7 @@
     var catBadge = '<span class="badge cat">' + esc(r.category.label) + '</span>' +
       (r.category.overridden ? ' <span class="sub">(auto-detect said ' + esc(r.category.suggestedLabel) + ')</span>' : '');
 
-    return '<div class="card hero">' +
+    return '<div class="card raised hero">' +
       '<div>' +
         '<div class="ident">' +
           '<span class="ticker">' + esc(r.ticker || '—') + '</span>' +
@@ -497,7 +497,7 @@
     var body = r.story
       ? r.story.split(/\n+/).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('')
       : '<p class="placeholder">Write the three-sentence story in the panel. If you cannot, Lynch would say you do not own the stock — you are gambling on it.</p>';
-    return '<div class="card prose"><h2>The story in three sentences</h2>' + body + '</div>';
+    return '<div class="card plain prose"><h2>The story in three sentences</h2>' + body + '</div>';
   }
 
   function renderFlags(r) {
@@ -513,7 +513,7 @@
   }
 
   function renderPlaybook(r) {
-    return '<div class="card prose"><h2>Category playbook — ' + esc(r.category.label) + '</h2>' +
+    return '<div class="card plain prose"><h2>Category playbook — ' + esc(r.category.label) + '</h2>' +
       '<p>' + esc(r.category.traits) + '</p>' +
       '<p>' + esc(r.category.playbook) + '</p></div>';
   }

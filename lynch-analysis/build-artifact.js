@@ -27,8 +27,14 @@ const markup = body[1]
   .replace(/\s*<script\s+src=[^>]*><\/script>/gi, '')
   .trim();
 
+// Remote stylesheets (the web font) can't be inlined, so carry the tags across.
+const head = html.slice(0, html.search(/<\/head>/i));
+const remoteLinks = (head.match(/<link\b[^>]*>/gi) || [])
+  .filter((tag) => /href="https?:/i.test(tag));
+
 const bundle = [
   '<title>Lynch Analysis</title>',
+  ...remoteLinks,
   '<style>',
   read('styles.css').trim(),
   '</style>',
