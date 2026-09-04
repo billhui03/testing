@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lynch Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <h1>Lynch Analysis</h1>
+    <span class="tag">Peter Lynch's framework, applied to your numbers</span>
+    <span class="spacer"></span>
+    <button class="btn ghost no-print" id="themeBtn" type="button">Theme: auto</button>
+    <button class="btn ghost no-print" id="printBtn" type="button">Print</button>
+  </header>
+
+  <div class="layout">
+
+    <aside class="panel no-print">
+      <form id="form" autocomplete="off"><!-- fields are built by app.js --></form>
+
+      <div class="panel-actions">
+        <button class="btn primary" id="saveBtn" type="button">Save</button>
+        <button class="btn" id="reportBtn" type="button">Copy report</button>
+        <button class="btn" id="jsonBtn" type="button">Copy JSON</button>
+        <button class="btn" id="importBtn" type="button">Import</button>
+        <button class="btn" id="exampleBtn" type="button">Example</button>
+        <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+      </div>
+
+      <div id="importBox" class="field" hidden>
+        <label for="importText">Paste previously copied JSON</label>
+        <textarea id="importText" rows="5" placeholder="{ &quot;ticker&quot;: &quot;NGDC&quot;, ... }"></textarea>
+        <button class="btn" id="importGo" type="button" style="margin-top:8px">Load these inputs</button>
+      </div>
+
+      <div class="panel-actions" style="display:block">
+        <legend style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)">Saved analyses</legend>
+        <div class="saved-list" id="savedList"></div>
+      </div>
+    </aside>
+
+    <main class="dash" id="dash"></main>
+
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="lynch.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
