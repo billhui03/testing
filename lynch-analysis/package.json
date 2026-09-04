@@ -1,0 +1,12 @@
+{
+  "name": "lynch-analysis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Score a stock against Peter Lynch's investment framework — PEG, category, balance-sheet hidden value.",
+  "scripts": {
+    "test": "node --test test/lynch.test.js",
+    "build": "node build-artifact.js",
+    "serve": "npx --yes http-server . -p 8080 -c-1"
+  },
+  "license": "MIT"
+}
